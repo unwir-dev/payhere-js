@@ -1,0 +1,29 @@
+{
+  "name": "payherejs",
+  "version": "0.0.1",
+  "author": "Unwir PVT LTD",
+  "description": "",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w",
+    "format": "prettier --write src/**/*.ts",
+    "lint": "eslint src/**/*.ts",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "keywords": [
+    "payhere.lk",
+    "javascript"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.1",
+    "eslint": "^8.40.0",
+    "jest": "^29.5.0",
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.4"
+  }
+}

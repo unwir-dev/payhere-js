@@ -1,4 +1,4 @@
-enum TimeUnit {
+export enum TimeUnit {
   WEEK = 'Week',
   MONTH = 'Month',
   YEAR = 'Year',
@@ -40,5 +40,11 @@ export class Month extends RecurringTimeUnit {
 export class Year extends RecurringTimeUnit {
   constructor(nYears: number) {
     super(nYears, TimeUnit.YEAR);
+  }
+}
+
+export class Forever extends RecurringTimeUnit {
+  constructor() {
+    super(999, TimeUnit.YEAR);
   }
 }

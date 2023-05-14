@@ -1,6 +1,6 @@
 import { Payhere } from '../payhere';
 import { Customer } from './customer';
-import { Month, RecurringTimeUnit, Week, Year } from './recurring-time-unit';
+import { Forever, Month, RecurringTimeUnit, Week, Year } from './recurring-time-unit';
 
 const removeBlankAttributes = (obj: object): object => {
   return Object.fromEntries(Object.entries(obj).filter(([_, v]) => v != null));
@@ -46,6 +46,7 @@ export {
   Week,
   Month,
   Year,
+  Forever,
   RecurringTimeUnit,
   Customer,
 };

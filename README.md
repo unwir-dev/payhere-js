@@ -2,36 +2,37 @@
   <img width="600" height="200" width="400" src="./src/static/payhere_logo.png">
 </p>
 
-# payhere-js-sdk
+# payhere-js/client
 
-Full Fledged JavaScript SDK for payhere.lk
-
-Payhere is one of the most popular payment gateways in Sri Lanka, yet there is still no comfortable way to integrate Payhere with modern front end JS frameworks such as
-React.js, Angular.js, and Vue.js. This NPM package can be used for a seamless Payhere integration with your single page web app.
-
-Have a look at [example code](/examples) or the [demo React.js app](https://pavindulakshan.github.io/payhere-js-sdk/).
+This comprehensive JavaScript SDK provides seamless integration with [payhere.lk](https://payhere.lk/), which is a highly popular payment gateway in Sri Lanka. Despite the popularity of Payhere, integrating it with modern front-end JavaScript frameworks like React.js, Angular.js, and Vue.js has been lacking a convenient solution. By utilizing this NPM package, you can effortlessly integrate Payhere into your single-page web application, ensuring a smooth and hassle-free experience.
 
 ## Features
 
-- Works in front end JS frameworks
-- Making one time payments with Checkout API
-- Making Recurrent payments with Recurring API (monthly, daily. annually)
-- Get payments data of your Payhere account using Retrieval API
-- Linking customers payment info with your app for making future payments at any time without customer intervention
-- subscriptions management (Find, retry and cancel subscriptions)
+- Works in front-end JS frameworks
+- Makes one-time payments with Checkout API
+- Enables recurrent payments with Recurring API (monthly, daily, annually, and forever)
+- Retrieves payments data from your Payhere account using Retrieval API
+- Links customers' payment information with your app for future payments without customer intervention
+- Manages subscriptions (finds, retries, and cancels subscriptions)
 
 ## Installation
+
+With PNPM
+
+```
+pnpm install payhere-js/client
+```
 
 With NPM
 
 ```
-npm install payhere-js-sdk
+npm install payhere-js/client
 ```
 
 With Yarn
 
 ```
-yarn add payhere-js-sdk
+yarn add payhere-js/client
 ```
 
 ## How to use
@@ -41,7 +42,7 @@ yarn add payhere-js-sdk
 First initialize Payhere in the entry point of your Single Page App, by specifying the merchant ID and the account type as follows.
 
 ```
-import {Payhere, AccountCategory} from "payhere-js-sdk"
+import {Payhere, AccountCategory} from "payhere-js/client"
 
 // Sandbox
 Payhere.init("12xxxxx",AccountCategory.SANDBOX)
@@ -53,7 +54,7 @@ Payhere.init("12xxxxx",AccountCategory.LIVE)
 ### Checkout
 
 ```
-import {Customer, CurrencyType, PayhereCheckout, CheckoutParams} from 'payhere-js-sdk'
+import {Customer, CurrencyType, PayhereCheckout, CheckoutParams} from 'payhere-js/client'
 
 function onPayhereCheckoutError(errorMsg) {
   alert(errorMsg)
@@ -65,8 +66,8 @@ function checkout() {
     last_name: "User",
     phone: "+94771234567",
     email: "user@example.com",
-    address: "No. 50, Highlevel Road",
-    city: "Panadura",
+    address: "No. 50, Highlevel Road, Kottawa",
+    city: "Colombo",
     country: "Sri Lanka",
   })
 
@@ -88,7 +89,7 @@ function checkout() {
 ### Subscription
 
 ```
-import {PayhereSubscription,SubscriptionParams, Customer, Month,CurrencyType} from 'payhere-js-sdk'
+import {PayhereSubscription,SubscriptionParams, Customer, Month,CurrencyType} from 'payhere-js/client'
 
 function onPayhereSubscriptionError(errorMsg) {
   alert(errorMsg)
@@ -101,8 +102,8 @@ function initSubscription() {
       last_name: "User",
       phone: "+94771234567",
       email: "user@example.com",
-      address: "No. 50, Highlevel Road",
-      city: "Panadura",
+      address: "No. 50, Highlevel Road, Kottawa",
+      city: "Colombo",
       country: "Sri Lanka",
     })
 
@@ -129,7 +130,7 @@ function initSubscription() {
 ### Preapproval
 
 ```
-import {PayherePreapproval,PreapprovalParams, Customer, CurrencyType} from 'payhere-js-sdk'
+import {PayherePreapproval,PreapprovalParams, Customer, CurrencyType} from 'payhere-js/client'
 
 function preApprove() {
   const customer = new Customer({
@@ -137,8 +138,8 @@ function preApprove() {
     last_name: "User",
     phone: "+94771234567",
     email: "user@example.com",
-    address: "No. 50, Highlevel Road",
-    city: "Panadura",
+    address: "No. 50, Highlevel Road, Kottawa",
+    city: "Colombo",
     country: "Sri Lanka",
   })
 
@@ -192,7 +193,7 @@ Coming soon
 
 Coming soon
 
-## Roadmap
+## Road map
 
 - Implement unit tests for each functionality using Jest
 
@@ -206,14 +207,16 @@ Coming soon
 
 - Implement cancel subscription functionality
 
-- Break down the repository into several NPM packages based on the environment
+<!-- - Break down the repository into several NPM packages based on the environment
 
-  - `payhere-js-sdk/client` - checkout, subscription, preapproval
-  - `payhere-js-sdk/server` - automated charging, payment data retrieval, manage subscriptions, verify webhook responses
+  - `payhere-js/client/client` - checkout, subscription, preapproval
+  - `payhere-js/client/server` - automated charging, payment data retrieval, manage subscriptions, verify webhook responses
 
-- Create a authorized dashboard in server npm package to view payment information and manage subscriptions
+- Create a authorized dashboard in server npm package to view payment information and manage subscriptions -->
 
 <!-- ## Contributing
 
 This package is still in its early stages. All conributions are highly welcome.
 Please read the [contributing guide](CONTRIBUTING.md) to get started. -->
+
+This project draws inspiration from the incredible work by [Pavindu Lakshan](https://github.com/pavinduLakshan), available at [GIT source](https://github.com/pavinduLakshan/payhere-js-sdk).

@@ -4,7 +4,7 @@ import { PayhereCheckout } from './payhere-checkout';
 import { PayherePreapproval } from './payhere-preapproval';
 import { PayhereSubscription } from './payhere-subscription';
 import { CheckoutParams, PreapprovalParams, SubscriptionParams } from './schemas';
-import { Customer, Month, Week, Year } from './utils';
+import { Customer, Forever, Month, Week, Year } from './utils';
 
 export {
   Payhere,
@@ -18,6 +18,7 @@ export {
   Week,
   Month,
   Year,
+  Forever,
   Customer,
   CurrencyType,
 };
